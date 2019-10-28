@@ -93,7 +93,6 @@ class _RegisterPageState extends State<StatefulWidget> {
                   builder: (context, snapshot) {
                     return TextField(
                       controller: _emailController,
-                      obscureText: true,
                       decoration: InputDecoration(
                         errorText: snapshot.hasError ? snapshot.error : null,
                         labelText: 'Email',
@@ -115,7 +114,6 @@ class _RegisterPageState extends State<StatefulWidget> {
                     builder: (context, snapshot) {
                       return TextField(
                         controller: _phoneController,
-                        obscureText: true,
                         decoration: InputDecoration(
                           errorText: snapshot.hasError ? snapshot.error : null,
                           labelText: 'Số điện thoại',
@@ -173,7 +171,7 @@ class _RegisterPageState extends State<StatefulWidget> {
         _passwordController.text, _emailController.text, _phoneController.text);
     if(isValid){
       authBloc.signUp(_emailController.text, _passwordController.text, _usernameController.text, _phoneController.text, (){
-        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
       });
     }
   }

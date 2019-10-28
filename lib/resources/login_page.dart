@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:grab_demo/blocs/auth_bloc.dart';
+import 'package:grab_demo/resources/home_page.dart';
 import 'package:grab_demo/resources/register_page.dart';
 
 class LoginPage extends StatefulWidget{
@@ -12,6 +14,9 @@ class LoginPage extends StatefulWidget{
 
 }
 class _LoginPageState extends State<StatefulWidget>{
+  AuthBloc authBloc=AuthBloc();
+  TextEditingController _emailController=TextEditingController();
+  TextEditingController _passwordController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -31,8 +36,9 @@ class _LoginPageState extends State<StatefulWidget>{
                 child: Text('Chào mừng trở lại!',style: TextStyle(fontSize: 22),),
               ),
                 TextField(
+                  controller: _emailController,
                   decoration: InputDecoration(
-                    labelText: 'Tài khoản',
+                    labelText: 'Email',
                     prefixIcon: Icon(Icons.account_circle,color: Color(0xff289245),),
                     border: OutlineInputBorder(borderSide: BorderSide(color: Colors.white,width: 1),borderRadius: BorderRadius.all(Radius.circular(5))),
                   ),
@@ -41,6 +47,7 @@ class _LoginPageState extends State<StatefulWidget>{
                 padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
                 child: TextField(
                   obscureText: true,
+                  controller: _passwordController,
                   decoration: InputDecoration(
                     labelText: 'Mật khẩu',
                     prefixIcon: Icon(Icons.lock,color: Color(0xff289245),),
@@ -52,7 +59,7 @@ class _LoginPageState extends State<StatefulWidget>{
                 height: 50,
                 width: double.infinity,
                 child: RaisedButton(
-                  onPressed: (){},
+                  onPressed: _onSignInClick,
                   child: Text("Đăng nhập",style: TextStyle(fontSize: 20,color: Colors.white),),
                   color: Color(0xff289245),
                   shape: RoundedRectangleBorder(
@@ -76,5 +83,10 @@ class _LoginPageState extends State<StatefulWidget>{
         ),
       ),
     );
+  }
+  void _onSignInClick(){
+    authBloc.signIn(_emailController.text, _passwordController.text, (){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+    });
   }
 }

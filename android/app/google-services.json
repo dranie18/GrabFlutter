@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "48613237024",
+    "firebase_url": "https://grabflutter-60c8c.firebaseio.com",
+    "project_id": "grabflutter-60c8c",
+    "storage_bucket": "grabflutter-60c8c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48613237024:android:36b1a89a710ee987c3b745",
+        "android_client_info": {
+          "package_name": "com.example.grab_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48613237024-hndour4j5bm55n69jnte8hs938v1t6gd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNO9pKfi2Fmor5zqrJVNP4xPsuCGqBalQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48613237024-hndour4j5bm55n69jnte8hs938v1t6gd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

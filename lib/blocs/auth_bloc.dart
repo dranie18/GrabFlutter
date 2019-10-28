@@ -1,9 +1,9 @@
 import 'dart:async';
 
-//import 'package:gogo_demo/firebase/fb_auth.dart';
+import 'package:grab_demo/firebase/fb_auth.dart';
 
 class AuthBloc {
-//  var _fbAuth=FbAuth();
+  var _fbAuth=FbAuth();
   StreamController _usernameController = StreamController();
   StreamController _passwordController = StreamController();
   StreamController _emailController = StreamController();
@@ -43,7 +43,11 @@ class AuthBloc {
 
 
   void signUp(String email,String password,String username,String phone,Function onSuccess){
-//    _fbAuth.signUp(email, password, username, phone, onSuccess);
+    _fbAuth.signUp(email, password, username, phone, onSuccess);
+  }
+
+  void signIn(String email,String password,Function onSuccess){
+    _fbAuth.signIn(email, password, onSuccess);
   }
   void dispose() {
     _usernameController.close();
