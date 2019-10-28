@@ -57,8 +57,8 @@ class PickerPageState extends State<PickerPage> {
                     suffixIcon: Container(
                       height: 40,
                       width: 40,
-                      child: FlatButton(
-                        child: Icon(Icons.close),
+                      child: IconButton(
+                        icon: Icon(Icons.close),
                         onPressed: () {
                           addressController.text = "";
                         },

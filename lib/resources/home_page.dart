@@ -49,6 +49,7 @@ class HomePageState extends State<StatefulWidget> {
               child: Column(
                 children: <Widget>[
                   AppBar(
+                    elevation: 0.0,
                     backgroundColor: Colors.transparent,
                     leading: FlatButton(
                       onPressed: () {
@@ -69,8 +70,8 @@ class HomePageState extends State<StatefulWidget> {
                                 prefixIcon: Container(
                                   height: 40,
                                   width: 40,
-                                  child: FlatButton(
-                                    child: Icon(Icons.my_location,
+                                  child: IconButton(
+                                    icon: Icon(Icons.my_location,
                                         color: Color(0xff289245)),
                                     onPressed: () {
                                       Navigator.of(context).push(
@@ -85,8 +86,8 @@ class HomePageState extends State<StatefulWidget> {
                                 suffixIcon: Container(
                                   height: 40,
                                   width: 40,
-                                  child: FlatButton(
-                                    child: Icon(Icons.close),
+                                  child: IconButton(
+                                    icon: Icon(Icons.close),
                                     onPressed: () {
                                       fromController.text = "";
                                     },
@@ -100,8 +101,8 @@ class HomePageState extends State<StatefulWidget> {
                                 prefixIcon: Container(
                                   width: 40,
                                   height: 40,
-                                  child: FlatButton(
-                                    child: Icon(Icons.location_on,
+                                  child: IconButton(
+                                    icon: Icon(Icons.location_on,
                                       color: Color(0xff289245),),
                                     onPressed: () {
                                       Navigator.of(context).push(
@@ -116,8 +117,8 @@ class HomePageState extends State<StatefulWidget> {
                                 suffixIcon: Container(
                                   height: 40,
                                   width: 40,
-                                  child: FlatButton(
-                                    child: Icon(Icons.close),
+                                  child: IconButton(
+                                    icon: Icon(Icons.close),
                                     onPressed: () {
                                       toController.text = "";
                                     },
