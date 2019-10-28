@@ -6,8 +6,8 @@ class PickerPage extends StatefulWidget {
   final String selectedAddress;
   final Function(Place, bool) onSelected;
   final bool isFromAddress;
-  PickerPage(this.onSelected, this.selectedAddress, this.isFromAddress);
 
+  PickerPage(this.onSelected, this.selectedAddress, this.isFromAddress);
 
   @override
   State<PickerPage> createState() {
@@ -26,6 +26,7 @@ class PickerPageState extends State<PickerPage> {
     placeBloc.dispose();
     super.dispose();
   }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -53,7 +54,10 @@ class PickerPageState extends State<PickerPage> {
                   placeBloc.searchPlace(str);
                 },
                 decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.map,color: Color(0xff289245),),
+                    prefixIcon: Icon(
+                      Icons.map,
+                      color: Color(0xff289245),
+                    ),
                     suffixIcon: Container(
                       height: 40,
                       width: 40,
@@ -76,26 +80,28 @@ class PickerPageState extends State<PickerPage> {
                       if (snapshot.data == "start")
                         return Center(
                           child: CircularProgressIndicator(),
-                        );}
-                      List<Place> placeList = snapshot.data;
-                      print(placeList?.length??0);
-                      return SafeArea(
-                        child: ListView.separated(
-                            itemBuilder: (context, index) => ListTile(
-                                  title: Text(placeList.elementAt(index).name),
-                                  subtitle:
-                                      Text(placeList.elementAt(index).address),
-                                  onTap: () {
-                                    Navigator.of(context).pop();
-                                    widget.onSelected(placeList.elementAt(index),widget.isFromAddress);
-                                  },
-                                ),
-                            separatorBuilder: (context, index) => Divider(
-                                  height: 1,
-                                  color: Colors.grey,
-                                ),
-                            itemCount: placeList?.length??0),
-                      );
+                        );
+                    }
+                    List<Place> placeList = snapshot.data;
+                    print(placeList?.length ?? 0);
+                    return SafeArea(
+                      child: ListView.separated(
+                          itemBuilder: (context, index) => ListTile(
+                                title: Text(placeList.elementAt(index).name),
+                                subtitle:
+                                    Text(placeList.elementAt(index).address),
+                                onTap: () {
+                                  Navigator.of(context).pop();
+                                  widget.onSelected(placeList.elementAt(index),
+                                      widget.isFromAddress);
+                                },
+                              ),
+                          separatorBuilder: (context, index) => Divider(
+                                height: 1,
+                                color: Colors.grey,
+                              ),
+                          itemCount: placeList?.length ?? 0),
+                    );
                   },
                 ),
               )
