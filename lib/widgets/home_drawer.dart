@@ -15,19 +15,19 @@ class HomeDrawerState extends State<StatefulWidget>{
     return ListView(
       children: <Widget>[
         ListTile(
-          leading: Icon(Icons.account_circle),
+          leading: Icon(Icons.account_circle,color: Color(0xff289245),),
           title: Text("Tài khoản"),
         ),
         ListTile(
-          leading: Icon(Icons.notifications),
+          leading: Icon(Icons.notifications,color: Color(0xff289245),),
           title: Text("Thông báo"),
         ),
         ListTile(
-          leading: Icon(Icons.settings),
+          leading: Icon(Icons.settings,color: Color(0xff289245),),
           title: Text("Cài đặt"),
         ),
         ListTile(
-          leading: Icon(Icons.exit_to_app),
+          leading: Icon(Icons.exit_to_app,color: Color(0xff289245),),
           title: Text("Đăng xuất"),
         )
       ],

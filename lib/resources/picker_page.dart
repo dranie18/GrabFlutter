@@ -38,7 +38,9 @@ class PickerPageState extends State<PickerPage> {
     // TODO: implement build
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xff289245),
+      ),
       body: Container(
         color: Colors.white,
         constraints: BoxConstraints.expand(),
@@ -51,12 +53,16 @@ class PickerPageState extends State<PickerPage> {
                   placeBloc.searchPlace(str);
                 },
                 decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.location_searching),
-                    suffixIcon: FlatButton(
-                      child: Icon(Icons.close),
-                      onPressed: () {
-                        addressController.text = "";
-                      },
+                    prefixIcon: Icon(Icons.map,color: Color(0xff289245),),
+                    suffixIcon: Container(
+                      height: 40,
+                      width: 40,
+                      child: FlatButton(
+                        child: Icon(Icons.close),
+                        onPressed: () {
+                          addressController.text = "";
+                        },
+                      ),
                     ),
                     hintText: "Nhập địa điểm"),
               ),
